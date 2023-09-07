@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC18F4550
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F4550
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/62893d61448f5ba8e3e764981644db43
+          gist_title: Práctica 6 - PWM MPLAB X PIC assembler MPASM PIC18F4550
+          gist_description: Prácticas MPASM
+          github_file: Proyecto/PIC18F4550/PWM1.X/pwm.asm
+          file_encoding: ISO-8859-1
+    #PIC18F45K50
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F45K50
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/f80d36c2c2bf56cb56f00a71002e1409
+          gist_title: Práctica 6 - PWM MPLAB X PIC assembler MPASM PIC18F45K50
+          gist_description: Prácticas MPASM
+          github_file: Proyecto/PIC18F45K50/PWM1.X/pwm.asm
+          file_encoding: ISO-8859-1
